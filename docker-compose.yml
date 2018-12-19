@@ -9,6 +9,8 @@ services:
         ELK_VERSION: $ELK_VERSION
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+      - /home/hpf/elkcompose/data:/usr/share/elasticsearch/data
+      - /usr/share/elasticsearch/data:/home/hpf/elkcompose/data
     ports:
       - "9200:9200"
       - "9300:9300"
